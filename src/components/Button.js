@@ -5,7 +5,7 @@ class Button extends Component {
     return(
       <button onClick={ this.props.handleClick }>
         Click
-      </button>
+        </button>
     );
   }
 }

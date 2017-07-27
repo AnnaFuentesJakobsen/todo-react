@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Button from './Button';
-import List from './List';
+//import Button from './Button';
+//import List from './List';
 import './../App.css';
-
 
 class App extends Component {
   state = { items: [2,3] };
@@ -14,10 +13,19 @@ class App extends Component {
   };
 
   render() {
+    const list = this.state.items.map(function(item, index) {
+      return <div key={index}>{ item }</div>
+    });
+    console.log(list);  
+
     return(
       <div>
-        <List data={ this.state.items }/>
-        <Button handleClick={ this.addToList }/>
+        <div>
+          { list }
+        </div>
+        <button onClick={ this.addToList }>
+          Click
+        </button>
       </div>
     );
   }
