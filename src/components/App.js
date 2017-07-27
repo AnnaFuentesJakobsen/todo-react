@@ -7,6 +7,8 @@ class App extends Component {
   state = { items: [2,3] };
 
   addToList = () => {
+    console.log(this.refs.itemInput.value)
+    return
     this.setState({
       items: this.state.items.concat(1337)
     })
@@ -20,12 +22,13 @@ class App extends Component {
 
     return(
       <div>
-        <div>
-          { list }
-        </div>
+        <input type="text" ref="itemInput"></input>
         <button onClick={ this.addToList }>
           Click
         </button>
+        <div>
+          { list }
+        </div>
       </div>
     );
   }
