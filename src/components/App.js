@@ -8,7 +8,7 @@ class App extends Component {
 
   addToList = () => {
     this.setState({
-      items: [2,3,4]
+      items: this.state.items.concat(1337)
     })
   };
 
