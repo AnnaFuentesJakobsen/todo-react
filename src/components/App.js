@@ -4,14 +4,13 @@ import React, { Component } from 'react';
 import './../App.css';
 
 class App extends Component {
-  state = { items: [2,3] };
+  state = { items: [] };
 
   addToList = () => {
-    console.log(this.refs.itemInput.value)
-    return
     this.setState({
-      items: this.state.items.concat(1337)
+      items: this.state.items.concat(this.refs.itemInput.value)
     })
+    this.refs.itemInput.value = ''
   };
 
   render() {
@@ -22,7 +21,7 @@ class App extends Component {
 
     return(
       <div>
-        <input type="text" ref="itemInput"></input>
+        <input type="text" placeholder="Add task" ref="itemInput"></input>
         <button onClick={ this.addToList }>
           Click
         </button>
