@@ -17,18 +17,19 @@ class App extends Component {
   }
 
   render() {
-    const list = this.state.items.map(function(item, index) {
-      return <li key={index}>{ item }</li>
+    const list = this.state.items.map((item, index) => {
+      return <li onClick={this.changeTodo} key={index}>{item}</li>
     });
+
     console.log(list);  
 
     return(
       <div>
         <input type="text" placeholder="Add task" ref="itemInput"></input>
-        <button onClick={ this.addToList }>
+        <button onClick={this.addToList}>
           Click
         </button>
-        <ul onClick={ this.changeTodo }>
+        <ul>
           { list }
         </ul>
       </div>
