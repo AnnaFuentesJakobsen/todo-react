@@ -12,10 +12,13 @@ class App extends Component {
     })
     this.refs.itemInput.value = ''
   };
+  changeTodo = () => {
+    console.log("Hej");
+  }
 
   render() {
     const list = this.state.items.map(function(item, index) {
-      return <div key={index}>{ item }</div>
+      return <li key={index}>{ item }</li>
     });
     console.log(list);  
 
@@ -25,9 +28,9 @@ class App extends Component {
         <button onClick={ this.addToList }>
           Click
         </button>
-        <div>
+        <ul onClick={ this.changeTodo }>
           { list }
-        </div>
+        </ul>
       </div>
     );
   }
